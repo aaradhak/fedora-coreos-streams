@@ -48,6 +48,15 @@ jobs:
               echo "${stream}, new"
               head/genericize-stream.py "head/${stream}" > "new/${stream}"
           done
+
+      # Debug step: List contents of old and new directories
+      - name: List files in old and new directories
+        run: |
+          echo "Contents of old directory:"
+          ls -alh old/streams
+          echo "Contents of new directory:"
+          ls -alh new/streams
+
       - name: Compare genericized metadata
         uses: coreos/actions-lib/check-diff@main
         with:
