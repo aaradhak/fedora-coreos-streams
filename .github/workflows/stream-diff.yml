@@ -49,7 +49,7 @@ jobs:
               head/genericize-stream.py "head/${stream}" > "new/${stream}"
           done
 
-      # Debug step: List contents of old and new directories
+      # Debug step
       - name: List files in old and new directories
         run: |
           echo "Contents of old directory:"
